@@ -41,10 +41,22 @@ Modern Greek (Ελληνικά) fan translation of the original game texts (`STR
 
 ### Optional Better-Matching Fonts (SIL OFL 1.1)
 
-If you want Greek text to better match the game's original aesthetic, you can optionally install these free, open-source (**SIL OFL 1.1**) fonts and reference them in `grammar.rule.font` inside `Languages/el.tsv`:
+If you want Greek text to better match the game's original aesthetic, you can optionally add these free, open-source (**SIL OFL 1.1**) fonts. Classic and Modern modes load fonts differently:
 
-- **Classic mode (DOS pixel look):** [Terminus TTF](https://files.ax86.net/terminus-ttf/) — place the `.ttf` in `Languages/` (e.g. `TerminusTTF.ttf`) or right-click and **Install for all users** on Windows.
-- **Modern mode (matches `Lexend Exa`):** [Syne](https://fonts.google.com/specimen/Syne) or [Jura](https://fonts.google.com/specimen/Jura) — right-click the `.ttf` and **Install for all users** (so it installs to `C:\Windows\Fonts`; Unity only detects all-user system fonts for Modern mode fallback).
+- **Classic mode (DOS pixel look):** [Terminus TTF](https://files.ax86.net/terminus-ttf/)
+  - Place the `.ttf` in `Languages/` renamed to `TerminusTTF.ttf` (Classic mode loads `.ttf` files directly from `Languages/`).
+- **Modern mode (`F`, matches `Lexend Exa`):** [Syne](https://fonts.google.com/specimen/Syne) or [Jura](https://fonts.google.com/specimen/Jura)
+  - **Must be installed system-wide** — Modern mode cannot load `.ttf` files from `Languages/` because Unity only falls back to installed OS fonts.
+  - On Windows: right-click the `.ttf` file → **Show more options** (Windows 11) → **Install for all users** (so it installs to `C:\Windows\Fonts`, not the per-user folder).
+  - On Linux: install into `/usr/share/fonts` (or `~/.local/share/fonts`).
+
+To enable both with automatic fallback to `NotoSans-Regular.ttf` / `Segoe UI` / `Tahoma` when not installed, set `grammar.rule.font` in `Languages/el.tsv` to:
+
+```tsv
+grammar.rule.font	TerminusTTF.ttf, os:Syne, os:Jura, os:Terminus (TTF) for Windows, os:Terminus (TTF), NotoSans-Regular.ttf, os:Segoe UI, os:Tahoma
+```
+
+With this configuration, **Classic mode** uses `TerminusTTF.ttf` and pressing **`F`** for **Modern mode** switches to `Syne` (or `Jura`). Missing entries are skipped automatically.
 
 ## Disclaimer
 
