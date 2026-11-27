@@ -1,7 +1,7 @@
 # Underworld Revisited's own texts in Greek (Ελληνικά): id TAB text, \n a line break.
 # The game's own texts (STRINGS.PAK) are not here: that pack is el.strings.tsv beside this file.
 # System voice: εσύ. grammar.* and msg.* frames join pieces of the game's strings.
-# Font: NotoSans-Regular.ttf (Greek), then Segoe UI / Tahoma. Classic pixel fonts lack Greek.
+# Font: optional TerminusTTF.ttf / Syne / Jura / Terminus (TTF), falling back to NotoSans-Regular.ttf and Segoe UI / Tahoma. Classic pixel fonts lack Greek.
 # Character names, map notes and save titles stay Latin-1: Greek letters are refused there.
 setting.GogInstallPath	Φάκελος παιχνιδιού
 setting.GogInstallPathUw2	Φάκελος του Ultima Underworld II
@@ -1063,7 +1063,7 @@ grammar.rule.capital	yes
 grammar.rule.letters	άέήίόύώϊϋΐΰΆΈΉΊΌΎΏς
 grammar.rule.alphabet	Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ Φ Χ Ψ Ω
 grammar.rule.alphabet.lower	auto
-grammar.rule.font	NotoSans-Regular.ttf, os:Segoe UI, os:Tahoma
+grammar.rule.font	TerminusTTF.ttf, os:Syne, os:Jura, os:Terminus (TTF) for Windows, os:Terminus (TTF), NotoSans-Regular.ttf, os:Segoe UI, os:Tahoma
 grammar.rule.ime	no
 grammar.rule.classic.font	original
 grammar.rule.classic.bold	no

@@ -38,7 +38,14 @@ Modern Greek (Ελληνικά) fan translation for **[Underworld Revisited](htt
    sit alongside `UR.exe`.
 3. Launch Underworld Revisited and set **Language** to **Ελληνικά**.
 
-> **Font note:** Classic pixel fonts do not contain Greek glyphs. `el.tsv` configures `grammar.rule.font` to fall back to `NotoSans-Regular.ttf` (with `Segoe UI` and `Tahoma` as system fallbacks). Save-game names and map notes remain Latin-1.
+> **Font note:** Classic pixel fonts do not contain Greek glyphs. `el.tsv` configures `grammar.rule.font` to automatically use optional Greek-compatible fonts if installed (**Terminus TTF** for a classic DOS pixel look, **Syne** or **Jura** to match the game's modern `Lexend Exa` font), and falls back to the bundled `NotoSans-Regular.ttf` (Classic) and `Segoe UI` / `Tahoma` (Modern) if not. Save-game names and map notes remain Latin-1.
+
+### Optional Better-Matching Fonts (SIL OFL 1.1)
+
+If you want Greek text to better match the game's original aesthetic, you can optionally install any of these free, open-source (**SIL OFL 1.1**) fonts—`el.tsv` will pick them up automatically:
+
+- **Classic mode (DOS pixel look):** [Terminus TTF](https://files.ax86.net/terminus-ttf/) — either place the `.ttf` in `Languages/` renamed to `TerminusTTF.ttf`, or right-click and **Install for all users** on Windows.
+- **Modern mode (matches `Lexend Exa`):** [Syne](https://fonts.google.com/specimen/Syne) or [Jura](https://fonts.google.com/specimen/Jura) — right-click the `.ttf` and **Install for all users** (so it installs to `C:\Windows\Fonts`; Unity only detects all-user system fonts for Modern mode fallback).
 
 ## Disclaimer
 
