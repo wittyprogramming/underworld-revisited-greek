@@ -78,7 +78,7 @@ Leave person names (Bragit, Goldthirst, Murgo, Tybal, …) and most place-names 
 | circle | κύκλος (m) |
 | goblin | γκόμπλιν (m, άκλιτο) |
 | lizardman | σαυράνθρωπος (m) |
-| troll | τρολ (m, άκλιτο) |
+| troll | τρολ (n, άκλιτο) |
 | skeleton | σκελετός (m) |
 | ghost | φάντασμα (n) |
 | golem | γκόλεμ (n, άκλιτο) |
