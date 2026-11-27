@@ -11,12 +11,58 @@ Frozen terms. Do not invent a second form later. Genders: m / f / n.
 | underworld | κάτω κόσμος | Never υπόκοσμος |
 | Avatar | Άβαταρ | m, as in Greek media |
 | Britannia | Βρεταννία | f |
-| Lord British | Lord British | |
-| Cabirus | Cabirus | |
+| Lord British | Λόρδος British | m (Λόρδος / Λόρδου / Λόρδο / Λόρδε) |
+| Cabirus | Cabirus | `Sir Cabirus` → Σερ Cabirus |
+| The Guardian / Guardian | Ο Φύλακας / Φύλακας | m (Φύλακας / Φύλακα) |
 | Ethereal Void | Αιθέριο Κενό | n |
 | Isle of the Avatar | Νήσος του Άβαταρ | |
+| Castle British | Κάστρο British | n |
+| Killorn Keep | Φρούριο Killorn | n |
+| Bliy Skup Chamber / Necessity Chamber | Θάλαμος Bliy Skup / Θάλαμος Ανάγκης | m |
 
-Leave person names (Bragit, Goldthirst, Murgo, Tybal, …) and most place-names (Jhelom, Minoc, Killorn, Talorus, Scintillus) as in English.
+Leave Tier 2 person names (Bragit, Murgo, Tyball, …) and most place-names (Jhelom, Minoc, Killorn, Talorus, Scintillus) in English. Tier 1 titles, roles, and descriptive names/epithets are translated below.
+
+## Tier 1 names, titles, and roles
+
+### UW1
+
+| English | Greek | Notes |
+|---|---|---|
+| Sir Cabirus | Σερ Cabirus | Keep typed keyword `3697:42 sir` English |
+| Goldthirst | Χρυσοδίψης | m (-ης / -η) |
+| Shanklick | Γλειψοκόκαλη | f (-η / -ης) |
+| Eyesnack | Ματομεζές | m (-ές / -έ); keep `3589:51 eyesnack` English (Latin-1 player name check) |
+| Marrowsuck | Μυελορούφας | m (-ας / -α) |
+| Kneenibble | Γονατοροκάνης | m (-ης / -η) |
+| Steeltoe | Ατσαλοπόδης | m (-ης / -η) |
+| Brawnclan | Δυνατογένης | m (-ης / -η) |
+| Hewstone | Πετροκόπος | m (-ος / -ου / -ο) |
+| Ironwit | Σιδερόνους | m |
+| Dorna Ironfist | Dorna Σιδερογροθιάς | m (-ιάς / -ιά) |
+| Sethar Strongarm | Sethar Δυνατόχερος | m; keep typed keyword `sethar` English |
+| Lakshi Longtooth | Lakshi Μακρυδόντης | m |
+| Dr. Owl | Δρ. Κουκουβάγιας | m (-ας / -α) |
+| Door | Πόρτα | Block 7:42 only; keep typed keywords `3602:14` & `3728:17` English |
+
+### UW2
+
+| English | Greek | Notes |
+|---|---|---|
+| Lord Umbria | Λόρδος Umbria | m |
+| Lord Thibris | Λόρδος Thibris | m |
+| Lady Tory | Λαίδη Tory | f |
+| The Listener | Ο Ακροατής | m |
+| The Dripper / Dripper | Ο Σταλάκτης / Σταλάκτης | m |
+| Data Integrator | Ενοποιητής Δεδομένων | m |
+| Historian | Ιστορικός | m |
+| Futurian | Μελλοντολόγος | m |
+| Eloemosynator | Ελεημονητής | m |
+| Dialogician | Διαλογητής | m |
+| Runekeeper | Ρουνοφύλακας | m |
+| Sentinel 868 | Φρουρός 868 | m |
+| Jerry the Rat | Jerry ο Αρουραίος | m |
+| Blackie | Μαυρούλα | f (mare) |
+| Beauty | Πεντάμορφη | f (horse) |
 
 ## Virtues
 

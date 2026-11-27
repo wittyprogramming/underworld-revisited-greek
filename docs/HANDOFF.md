@@ -43,7 +43,7 @@ Look sentences already work, e.g. `Βλέπεις έναν ήρεμο σαπιο
 
 ## Counts (UW1 `el.strings.tsv`)
 
-About **6655** lines contain Greek; **`validate-tsv` 0 errors**, 432 English as-is (2026-11-26 after cutscenes 3072–3105). Conversations: **all 5090** (3585–3898; keywords/lizard tokens/`Other...` etc. left English). Cutscenes: **122**.
+About **6714** lines contain Greek; **`validate-tsv` 0 errors**, 377 English as-is (2026-11-27 after Tier 1 names/titles/roles pass). Conversations: **all 5090** (3585–3898; keywords/lizard tokens/`Other...` etc. left English). Cutscenes: **122**.
 
 | Block | What | Status |
 |---|---|---|
@@ -61,7 +61,7 @@ About **6655** lines contain Greek; **`validate-tsv` 0 errors**, 432 English as-
 | 3072–3105 | Cutscene subtitles | **Done** (122; names English; Auto subtitles on) |
 | 3585–3898 | Conversations | **Done** (5090; keywords/lizard tokens/`Sir`/`Madam`/`Other...` English) |
 
-UW2 pack: 9773 strings; **~9252 Greek** (blocks 1–10 except 24; 74 books; **45 cutscenes**; **all conversations 3584–3752**); rest English. `validate-tsv --game uw2`: 0 errors (2026-11-26).
+UW2 pack: 9773 strings; **~9288 Greek** (blocks 1–10 except 24; 74 books; **45 cutscenes**; **all conversations 3584–3752**; Tier 1 names/titles/roles done); rest English. `validate-tsv --game uw2`: 0 errors (2026-11-27).
 
 ## Next step (this handoff)
 
