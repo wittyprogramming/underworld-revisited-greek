@@ -39,24 +39,28 @@ Modern Greek (Ελληνικά) fan translation of the original game texts (`STR
 
 > **Font note:** Classic pixel fonts do not contain Greek glyphs. `NotoSans-Regular.ttf` is included as a fallback for Classic mode (with `Segoe UI` / `Tahoma` for Modern mode). Save-game names and map notes remain Latin-1.
 
-### Optional Better-Matching Fonts (SIL OFL 1.1)
+### Recommended Font Setup (Classic & Modern Modes)
 
-If you want Greek text to better match the game's original aesthetic, you can optionally add these free, open-source (**SIL OFL 1.1**) fonts. Classic and Modern modes load fonts differently:
+Classic and Modern modes load fonts differently: **Classic mode** (1-bit 6px pixel boxes like the message scroll and stats panel) reads .ttf files from Languages/ first, while **Modern mode** (F, conversations and menus) ignores .ttf files and falls back only to installed OS fonts (os:).
 
-- **Classic mode (DOS pixel look):** [Terminus TTF](https://files.ax86.net/terminus-ttf/)
-  - Place the `.ttf` in `Languages/` renamed to `TerminusTTF.ttf` (Classic mode loads `.ttf` files directly from `Languages/`).
-- **Modern mode (`F`, matches `Lexend Exa`):** [Syne](https://fonts.google.com/specimen/Syne) or [Jura](https://fonts.google.com/specimen/Jura)
-  - **Must be installed system-wide** — Modern mode cannot load `.ttf` files from `Languages/` because Unity only falls back to installed OS fonts.
-  - On Windows: right-click the `.ttf` file → **Show more options** (Windows 11) → **Install for all users** (so it installs to `C:\Windows\Fonts`, not the per-user folder).
-  - On Linux: install into `/usr/share/fonts` (or `~/.local/share/fonts`).
+For the cleanest look in both modes:
 
-To enable both with automatic fallback to `NotoSans-Regular.ttf` / `Segoe UI` / `Tahoma` when not installed, set `grammar.rule.font` in `Languages/el.tsv` to:
+- **Classic mode (6px 1-bit pixel boxes):** **Tahoma** (	ahoma.ttf)
+  - Tahoma was hinted specifically for 1-bit monochrome rendering at tiny sizes and stays crisp in the 6-row message scroll without lines colliding.
+  - On Windows: copy C:\Windows\Fonts\tahoma.ttf into your Languages/ folder (placing the file there lets Classic mode use Tahoma while Modern mode uses os:Syne Medium). On Linux/other systems without Tahoma, Classic mode falls back to NotoSans-Regular.ttf.
+- **Modern mode (F, matches Lexend Exa):** **Syne Medium** (static weight 500, [Google Fonts — Syne](https://fonts.google.com/specimen/Syne), SIL OFL 1.1)
+  - **Why Medium (500) instead of Regular (400):** Underworld Revisited’s built-in Lexend Exa lacks Greek *except* for μ (U+03BC) and π (U+03C0). With a Regular (400) fallback, every μ and π renders noticeably bolder than the surrounding Greek letters. Static **Syne Medium** (static/Syne-Medium.ttf from the Google Fonts download) matches Lexend Exa’s stroke weight and geometric width seamlessly.
+  - **Must be installed system-wide** — Modern mode cannot load .ttf files from Languages/:
+    - On Windows: right-click Syne-Medium.ttf → **Show more options** (Windows 11) → **Install for all users** (so it installs to C:\Windows\Fonts, not the per-user folder).
+    - On Linux: install into /usr/share/fonts (or ~/.local/share/fonts).
 
-```tsv
-grammar.rule.font	TerminusTTF.ttf, os:Syne, os:Jura, os:Terminus (TTF) for Windows, os:Terminus (TTF), NotoSans-Regular.ttf, os:Segoe UI, os:Tahoma
-```
+Set grammar.rule.font in Languages/el.tsv to:
 
-With this configuration, **Classic mode** uses `TerminusTTF.ttf` and pressing **`F`** for **Modern mode** switches to `Syne` (or `Jura`). Missing entries are skipped automatically.
+`	sv
+grammar.rule.font	tahoma.ttf, os:Syne Medium, os:Tahoma, NotoSans-Regular.ttf, os:Segoe UI
+`
+
+With this configuration, **Classic mode** uses 	ahoma.ttf and **Modern mode** (F) uses Syne Medium. Missing entries are skipped automatically (falling back to os:Tahoma, NotoSans-Regular.ttf, and os:Segoe UI).
 
 ## Disclaimer
 
