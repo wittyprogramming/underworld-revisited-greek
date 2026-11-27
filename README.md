@@ -8,13 +8,13 @@ Modern Greek (Ελληνικά) fan translation of the original game texts (`STR
 
 ```
 ├── Languages/
-│   ├── el.strings.tsv          # Ultima Underworld I strings (~7,091 entries; blocks 1–10, cutscenes, all conversations)
+│   ├── el.strings.tsv          # Ultima Underworld I strings (7,091 entries; blocks 1–10, cutscenes, all conversations)
 │   ├── UW2/
 │   │   └── el.strings.tsv      # Ultima Underworld II strings (9,773 entries; blocks 1–10, cutscenes, all conversations)
 │   ├── NotoSans-Regular.ttf    # Greek fallback font (classic pixel fonts lack Greek glyphs)
 │   └── NotoSans-OFL.txt        # SIL Open Font License for Noto Sans
 ├── docs/
-│   ├── glossary.md             # Frozen Greek RPG/lore terminology & grammar conventions
+│   ├── glossary.md             # Frozen Greek RPG/lore terminology, Tier 1 names/titles & grammar conventions
 │   └── HANDOFF.md              # Translation progress log, block inventory, and technical notes
 └── scripts/
     └── patch_*.py              # Python helper scripts used to build and patch the TSV files
@@ -22,9 +22,9 @@ Modern Greek (Ελληνικά) fan translation of the original game texts (`STR
 
 ## Coverage
 
-- **Underworld Revisited UI (`el.tsv`):** Included upstream in [PQMarine/UnderworldRevisited](https://github.com/PQMarine/UnderworldRevisited/blob/main/Languages/el.tsv).
-- **Ultima Underworld I (`Languages/el.strings.tsv`):** Complete (~6,655 Greek entries; blocks 1–10, books, plaques, 122 cutscene subtitles, and all 5,090 conversation strings). Debug block 24, proper names, mantras, rune words, and lizard tokens are intentionally kept in English. Validated with `uwdump validate-tsv` (0 errors).
-- **Ultima Underworld II (`Languages/UW2/el.strings.tsv`):** Complete (~9,252 Greek entries; blocks 1–10, 74 books, plaques, 45 cutscene subtitles, and all 7,397 conversation strings across blocks 3584–3752). Debug block 24, proper names, mantras, and typed keywords are kept in English. Validated with `uwdump validate-tsv --game uw2` (0 errors).
+- **Underworld Revisited UI (`el.tsv`):** Included upstream in [PQMarine/UnderworldRevisited](https://github.com/PQMarine/UnderworldRevisited/blob/main/Languages/el.tsv) (merged in PR #43).
+- **Ultima Underworld I (`Languages/el.strings.tsv`):** Complete (**6,714** Greek entries / 377 English as-is; blocks 1–10, books, plaques, 122 cutscene subtitles, all 5,090 conversation strings, plus Tier 1 titles, epithets, and descriptive names such as *Χρυσοδίψης*, *Ματομεζές*, *Γλειψοκόκαλη*, *Δρ. Κουκουβάγιας*, and *Σερ Cabirus*). Debug block 24, Tier 2 proper names, mantras, rune words, typed keywords, and lizard tokens are intentionally kept in English. Validated with `uwdump validate-tsv` (**0 errors**).
+- **Ultima Underworld II (`Languages/UW2/el.strings.tsv`):** Complete (**9,288** Greek entries / 485 English as-is; blocks 1–10, 74 books, plaques, 45 cutscene subtitles, all 7,397 conversation strings across blocks 3584–3752, plus Tier 1 titles, roles, epithets, and descriptive names/places such as *Ο Φύλακας*, *Λόρδος British*, *Λαίδη Tory*, Talorid roles like *Ιστορικός* / *Μελλοντολόγος* / *Ελεημονητής*, *Κάστρο British*, and *Φρούριο Killorn*). Debug block 24, Tier 2 proper names, mantras, and typed keywords are kept in English. Validated with `uwdump validate-tsv --game uw2` (**0 errors, 0 warnings**).
 
 ## Installation
 
@@ -37,30 +37,43 @@ Modern Greek (Ελληνικά) fan translation of the original game texts (`STR
    sit alongside `UR.exe` (and `Languages/el.tsv`).
 3. Launch Underworld Revisited and set **Language** to **Ελληνικά**.
 
-> **Font note:** Classic pixel fonts do not contain Greek glyphs. `NotoSans-Regular.ttf` is included as a fallback for Classic mode (with `Segoe UI` / `Tahoma` for Modern mode). Save-game names and map notes remain Latin-1.
+> **Save / Latin-1 note:** Save-game names, character names, and map notes remain Latin-1 (as in the original 1992/1993 engine).
 
-### Recommended Font Setup (Classic & Modern Modes)
+## Font Setup (Classic & Modern Modes)
 
-Classic and Modern modes load fonts differently: **Classic mode** (1-bit 6px pixel boxes like the message scroll and stats panel) reads .ttf files from Languages/ first, while **Modern mode** (F, conversations and menus) ignores .ttf files and falls back only to installed OS fonts (os:).
+Classic pixel fonts (`FONT*.SYS`) do not contain Greek glyphs. Out of the box, upstream `Languages/el.tsv` configures:
+
+```tsv
+grammar.rule.font	NotoSans-Regular.ttf, os:Segoe UI, os:Tahoma
+```
+
+which uses the bundled `NotoSans-Regular.ttf` in Classic mode and `Segoe UI` / `Tahoma` in Modern mode.
+
+### Recommended Setup: Tahoma (Classic) + Syne Medium (Modern)
+
+Classic and Modern modes load fonts differently:
+- **Classic mode** (1-bit 6px pixel boxes such as the message scroll and stats panel) reads `.ttf` files from `Languages/` first.
+- **Modern mode** (`F` key, conversations and menus) ignores `.ttf` files in `Languages/` and falls back only to system-installed OS fonts (`os:`).
 
 For the cleanest look in both modes:
 
-- **Classic mode (6px 1-bit pixel boxes):** **Tahoma** (	ahoma.ttf)
+- **Classic mode (6px 1-bit pixel boxes):** **Tahoma** (`tahoma.ttf`)
   - Tahoma was hinted specifically for 1-bit monochrome rendering at tiny sizes and stays crisp in the 6-row message scroll without lines colliding.
-  - On Windows: copy C:\Windows\Fonts\tahoma.ttf into your Languages/ folder (placing the file there lets Classic mode use Tahoma while Modern mode uses os:Syne Medium). On Linux/other systems without Tahoma, Classic mode falls back to NotoSans-Regular.ttf.
-- **Modern mode (F, matches Lexend Exa):** **Syne Medium** (static weight 500, [Google Fonts — Syne](https://fonts.google.com/specimen/Syne), SIL OFL 1.1)
-  - **Why Medium (500) instead of Regular (400):** Underworld Revisited’s built-in Lexend Exa lacks Greek *except* for μ (U+03BC) and π (U+03C0). With a Regular (400) fallback, every μ and π renders noticeably bolder than the surrounding Greek letters. Static **Syne Medium** (static/Syne-Medium.ttf from the Google Fonts download) matches Lexend Exa’s stroke weight and geometric width seamlessly.
-  - **Must be installed system-wide** — Modern mode cannot load .ttf files from Languages/:
-    - On Windows: right-click Syne-Medium.ttf → **Show more options** (Windows 11) → **Install for all users** (so it installs to C:\Windows\Fonts, not the per-user folder).
-    - On Linux: install into /usr/share/fonts (or ~/.local/share/fonts).
+  - **Windows:** Copy `C:\Windows\Fonts\tahoma.ttf` into your `Languages/` folder (placing the file there lets Classic mode use `tahoma.ttf` while Modern mode skips `.ttf` files and picks `os:Syne Medium`).
+  - **Linux / other systems:** Without `tahoma.ttf`, Classic mode automatically falls back to the bundled `NotoSans-Regular.ttf`.
+- **Modern mode (`F`, matches Lexend Exa):** **Syne Medium** (static weight 500, [Google Fonts — Syne](https://fonts.google.com/specimen/Syne), SIL OFL 1.1)
+  - **Why Medium (500) instead of Regular (400):** Underworld Revisited's built-in `Lexend Exa` lacks Greek *except* for `μ` (`U+03BC`) and `π` (`U+03C0`). With a Regular (400) fallback, every `μ` and `π` renders noticeably bolder than the surrounding Greek letters. Static **Syne Medium** (`static/Syne-Medium.ttf` from the Google Fonts download) matches `Lexend Exa`'s stroke weight and geometric width seamlessly.
+  - **Must be installed system-wide** (Modern mode cannot load `.ttf` files from `Languages/`):
+    - **Windows:** Right-click `Syne-Medium.ttf` → **Show more options** (Windows 11) → **Install for all users** (so it installs into `C:\Windows\Fonts`, not the per-user folder).
+    - **Linux:** Install into `/usr/share/fonts` (or `~/.local/share/fonts`).
 
-Set grammar.rule.font in Languages/el.tsv to:
+Then set `grammar.rule.font` in `Languages/el.tsv` to:
 
-`	sv
+```tsv
 grammar.rule.font	tahoma.ttf, os:Syne Medium, os:Tahoma, NotoSans-Regular.ttf, os:Segoe UI
-`
+```
 
-With this configuration, **Classic mode** uses 	ahoma.ttf and **Modern mode** (F) uses Syne Medium. Missing entries are skipped automatically (falling back to os:Tahoma, NotoSans-Regular.ttf, and os:Segoe UI).
+With this configuration, **Classic mode** uses `tahoma.ttf` and **Modern mode** (`F`) uses `Syne Medium`. Any missing entry is skipped automatically (falling back to `os:Tahoma`, `NotoSans-Regular.ttf`, and `os:Segoe UI`).
 
 ## Disclaimer
 
