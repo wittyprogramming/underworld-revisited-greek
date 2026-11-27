@@ -8,6 +8,8 @@ Modern Greek (Ελληνικά) fan translation of the original game texts (`STR
 
 ```
 ├── Languages/
+│   ├── el/
+│   │   └── pictures/           # 52 painted Greek classic options panels & buttons (UW1 OPTBTNS_*.png)
 │   ├── el.strings.tsv          # Ultima Underworld I strings (7,091 entries; blocks 1–10, cutscenes, all conversations)
 │   ├── UW2/
 │   │   └── el.strings.tsv      # Ultima Underworld II strings (9,773 entries; blocks 1–10, cutscenes, all conversations)
@@ -17,12 +19,14 @@ Modern Greek (Ελληνικά) fan translation of the original game texts (`STR
 │   ├── glossary.md             # Frozen Greek RPG/lore terminology, Tier 1 names/titles & grammar conventions
 │   └── HANDOFF.md              # Translation progress log, block inventory, and technical notes
 └── scripts/
+    ├── generate_optbtns.py     # Python script generating the 52 painted 5px Greek classic options PNGs
     └── patch_*.py              # Python helper scripts used to build and patch the TSV files
 ```
 
 ## Coverage
 
 - **Underworld Revisited UI (`el.tsv`):** Included upstream in [PQMarine/UnderworldRevisited](https://github.com/PQMarine/UnderworldRevisited/blob/main/Languages/el.tsv) (merged in PR #43).
+- **Classic options buttons (`Languages/el/pictures/`):** All 52 UW1 classic options panel & button sprites (`OPTBTNS_01.png`–`OPTBTNS_3C.png`) painted with crisp 5px Greek pixel capitals matching the original palette and drop shadow. Validated with `uwdump validate-tsv` (**52 pictures checked, 0 errors**).
 - **Ultima Underworld I (`Languages/el.strings.tsv`):** Complete (**6,714** Greek entries / 377 English as-is; blocks 1–10, books, plaques, 122 cutscene subtitles, all 5,090 conversation strings, plus Tier 1 titles, epithets, and descriptive names such as *Χρυσοδίψης*, *Ματομεζές*, *Γλειψοκόκαλη*, *Δρ. Κουκουβάγιας*, and *Σερ Cabirus*). Debug block 24, Tier 2 proper names, mantras, rune words, typed keywords, and lizard tokens are intentionally kept in English. Validated with `uwdump validate-tsv` (**0 errors**).
 - **Ultima Underworld II (`Languages/UW2/el.strings.tsv`):** Complete (**9,288** Greek entries / 485 English as-is; blocks 1–10, 74 books, plaques, 45 cutscene subtitles, all 7,397 conversation strings across blocks 3584–3752, plus Tier 1 titles, roles, epithets, and descriptive names/places such as *Ο Φύλακας*, *Λόρδος British*, *Λαίδη Tory*, Talorid roles like *Ιστορικός* / *Μελλοντολόγος* / *Ελεημονητής*, *Κάστρο British*, and *Φρούριο Killorn*). Debug block 24, Tier 2 proper names, mantras, and typed keywords are kept in English. Validated with `uwdump validate-tsv --game uw2` (**0 errors, 0 warnings**).
 
@@ -31,6 +35,7 @@ Modern Greek (Ελληνικά) fan translation of the original game texts (`STR
 1. Locate your **Underworld Revisited** installation folder (the folder containing `UR.exe`).
    - If you are on a release prior to `el.tsv` being bundled (e.g., v0.26.0), also download [`Languages/el.tsv`](https://github.com/PQMarine/UnderworldRevisited/blob/main/Languages/el.tsv) from the upstream repository into your `Languages/` folder.
 2. Copy the `Languages/` directory from this repository into your Underworld Revisited folder so that:
+   - `Languages/el/pictures/OPTBTNS_*.png`
    - `Languages/el.strings.tsv`
    - `Languages/UW2/el.strings.tsv`
    - `Languages/NotoSans-Regular.ttf`
