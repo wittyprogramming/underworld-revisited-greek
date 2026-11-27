@@ -2,7 +2,7 @@
 
 Modern Greek (Ελληνικά) fan translation of the original game texts (`STRINGS.PAK`) for **[Underworld Revisited](https://github.com/PQMarine/UnderworldRevisited)** (v0.26.0), covering both **Ultima Underworld: The Stygian Abyss** (1992) and **Ultima Underworld II: Labyrinth of Worlds** (1993).
 
-> **Note:** Underworld Revisited's own UI and Greek grammar rules (`Languages/el.tsv`) are maintained upstream in [PQMarine/UnderworldRevisited](https://github.com/PQMarine/UnderworldRevisited/pull/43) and are not duplicated here. Because the `*.strings.tsv` files contain translated texts derived from the original Origin Systems games, this repository is kept **private**.
+> **Note:** Underworld Revisited's own UI and Greek grammar rules (`Languages/el.tsv`) are maintained upstream in [PQMarine/UnderworldRevisited](https://github.com/PQMarine/UnderworldRevisited/pull/43) and are not duplicated here. Because the `*.strings.tsv` files contain translated texts derived from the original Origin Systems games, they are published separately here rather than in the upstream repository.
 
 ## What's Included
 
